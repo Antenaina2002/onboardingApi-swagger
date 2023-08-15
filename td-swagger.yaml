@@ -1,0 +1,46 @@
+openapi: "3.0.0"
+info: 
+  version: "1.0.0"
+  title: "OnboardingApi"
+servers:
+- url: "http://STD22073.com" 
+paths: 
+  /etudiants: 
+    get: 
+      summary: "Liste des étudiants" 
+      responses: 
+        '200': 
+          description: "Une liste d'étudiants" 
+          content: 
+            application/json: 
+              schema: 
+                type: "array" 
+                items:  
+                  $ref: '#/components/schemas/Student' 
+        '500': 
+          description: "Erreur du serveur" 
+    post: 
+      summary: "Ajouter un nouvel étudiant" 
+      requestBody: 
+        description: "Etudiant à ajouter" 
+        required: true
+        content:
+          application/json: 
+            schema: 
+              $ref: '#/components/schemas/Student' 
+      responses: 
+        '200': 
+          description: "Etudiant ajouter avec succès" 
+        '500': 
+          description: "Erreur interne du serveur" 
+components: 
+  schemas: 
+    Student: 
+      type: "object"
+      properties:
+        id:
+          type: "integer" 
+        nom:
+          type: "string" 
+        datenaissance:
+          type: "string" 
