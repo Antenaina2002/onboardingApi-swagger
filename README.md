@@ -7,4 +7,4 @@ An API made with a swagger petstore template. This api is a simple one that get 
 
 ## teachers
 
-[Swagger teacher]()
+[Swagger teacher](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Antenaina2002/onboardingApi-swagger/main/teacher.yaml)
