@@ -1,0 +1,57 @@
+openapi: "3.0.0"
+info:
+  version: "1.0.0"
+  title: "OnboardingApi"
+servers:
+  - url: "http://STD22073.com"
+tags:
+  - name: Enseignants
+    description: Opérations liées aux enseignants
+paths:
+  /enseignants:
+    get:
+      summary: "Liste des enseignants"
+      tags:
+        - Enseignants
+      responses:
+        '200':
+          description: "Une liste d'enseignants"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: '#/components/schemas/Teacher'
+        '500':
+          description: "Erreur du serveur"
+    post:
+      summary: "Ajouter un nouvel enseignant"
+      tags:
+        - Enseignants
+      requestBody:
+        description: "Enseignant à ajouter"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+      responses:
+        '200':
+          description: "Enseignant ajouté avec succès"
+        '500':
+          description: "Erreur interne du serveur"
+components:
+  schemas:
+    Teacher:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        nom:
+          type: "string"
+        cours:
+          type: "string"
+        codecours:
+          type: "string"
+        dureecours:
+          type: "string"
