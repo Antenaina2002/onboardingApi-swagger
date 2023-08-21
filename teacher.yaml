@@ -49,9 +49,16 @@ components:
           type: "integer"
         nom:
           type: "string"
+        prenom:
+          type: "string"
         cours:
-          type: "string"
-        codecours:
-          type: "string"
-        dureecours:
-          type: "string"
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              nom:
+                type: "string"
+              codecours:
+                type: "string"
+              dureecours:
+                type: "string"
