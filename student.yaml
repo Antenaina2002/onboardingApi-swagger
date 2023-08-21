@@ -8,7 +8,7 @@ tags:
   - name: Etudiants
     description: Opérations liées aux étudiants
 paths:
-  /etudiants:
+  /Students:
     get:
       summary: "Liste des étudiants"
       tags:
