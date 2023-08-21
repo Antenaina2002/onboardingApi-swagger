@@ -8,7 +8,7 @@ tags:
   - name: Enseignants
     description: Opérations liées aux enseignants
 paths:
-  /enseignants:
+  /Teachers:
     get:
       summary: "Liste des enseignants"
       tags:
